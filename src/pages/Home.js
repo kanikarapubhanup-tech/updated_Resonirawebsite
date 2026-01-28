@@ -1,19 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Code, 
-  Brain, 
-  Zap, 
-  Globe, 
-  Users, 
+import {
+  ArrowRight,
+  Code,
+  Brain,
+  Zap,
+  Globe,
+  Users,
   Award,
   TrendingUp,
-  Star
+  Star,
+  Shield
 } from 'lucide-react';
 import Button from '../components/Button';
 import Card, { CardContent } from '../components/Card';
+import VoiceAgentWidget from '../components/VoiceAgentWidget';
 
 /**
  * Home page with hero section, features, and call-to-action
@@ -21,55 +23,49 @@ import Card, { CardContent } from '../components/Card';
 const Home = () => {
   const features = [
     {
-      icon: Code,
-      title: 'Software Development',
-      description: 'Custom software solutions built with modern technologies and best practices.',
+      icon: Zap,
+      title: 'Innovation First',
+      description: 'Cutting-edge solutions tailored to your vision.',
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: Brain,
-      title: 'AI Development',
-      description: 'Intelligent AI systems that learn, adapt, and deliver exceptional results.',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: Zap,
-      title: 'AI Workflows & Automation',
-      description: 'Streamline your business processes with intelligent automation solutions.',
+      icon: Shield,
+      title: 'Trusted & Secure',
+      description: 'Robust, reliable, enterprise-grade technology.',
       color: 'from-green-500 to-emerald-500'
     },
     {
-      icon: Globe,
-      title: 'Technology Solutions',
-      description: 'Comprehensive technology consulting and implementation services.',
-      color: 'from-orange-500 to-red-500'
+      icon: TrendingUp,
+      title: 'Future-Ready',
+      description: 'Scalable platforms for long-term success.',
+      color: 'from-purple-500 to-pink-500'
     }
   ];
 
   const stats = [
-    { number: 'x+', label: 'Projects Delivered', icon: Award },
-    { number: 'x+', label: 'Happy Clients', icon: Users },
-    { number: 'x+', label: 'Years Experience', icon: TrendingUp },
-    { number: 'x%', label: 'Client Satisfaction', icon: Star }
+    { number: '25+', label: 'Projects Delivered', icon: Award },
+    { number: '20+', label: 'Happy Clients', icon: Users },
+    { number: '3+', label: 'Years Experience', icon: TrendingUp },
+    { number: '98%', label: 'Client Satisfaction', icon: Star }
   ];
 
   const testimonials = [
     {
-      name: 'temp',
-      role: 'CEO, xxxxxx',
-      content: 'Resonira transformed our business with their AI solutions. The results exceeded our expectations.',
+      name: 'Sarah Chen',
+      role: 'CEO, TechFlow Solutions',
+      content: 'Resonira\'s AI-powered recommendation engine increased our conversion rates by 40%. Their machine learning expertise is exceptional.',
       rating: 5
     },
     {
-      name: 'temp',
-      role: 'CTO, InnovateLab',
-      content: 'Outstanding software development team. They delivered our project on time and within budget.',
+      name: 'Michael Rodriguez',
+      role: 'CTO, Blockchain Ventures',
+      content: 'The smart contract platform they built for us is robust and secure. Resonira\'s blockchain expertise helped us launch ahead of schedule.',
       rating: 5
     },
     {
-      name: 'temp',
-      role: 'Founder, StartupXYZ',
-      content: 'The automation workflows they built saved us countless hours in our company. Highly recommended!',
+      name: 'Dr. Priya Sharma',
+      role: 'Founder, MedTech Innovations',
+      content: 'Their AI diagnostic system reduced our analysis time by 60%. The team\'s understanding of healthcare AI is outstanding.',
       rating: 5
     }
   ];
@@ -108,35 +104,26 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
               <span className="gradient-text">
-                Resonira
-              </span>
-              <br />
-              <span className="text-gray-900 dark:text-white">
-                Empowering Innovation with
-              </span>
-              <br />
-              <span className="gradient-text">
-                AI & Technology
+                Trusted IT. Smarter AI. Lasting Impact
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              Transform your business with cutting-edge AI solutions, custom software development, 
-              and intelligent automation workflows that drive real results.
+              Resonira Technologies empowers businesses with future-ready digital solutions that echo innovation, precision, and impact.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/contact">
+              <Link to="/services">
                 <Button size="lg" className="text-lg px-8 py-4">
-                  Get Started
+                  Explore Services
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Link to="/portfolio">
+              <Link to="/contact">
                 <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                  View Our Work
+                  Contact Us
                 </Button>
               </Link>
             </div>
@@ -159,8 +146,48 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      {/* Voice Agent Widget Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+              Try Our <span className="gradient-text">Voice AI Assistant</span>
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Experience our AI-powered voice assistant. Ask questions, schedule meetings, and learn about our services.
+            </p>
+          </motion.div>
+          <VoiceAgentWidget
+            showCalendar={false}
+            showWhatsApp={false}
+          />
+        </div>
+      </section>
+
+      {/* Quick Intro Section */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
+              At Resonira Technologies, we specialize in creating scalable, secure, and innovative technology solutions that drive growth and transform industries.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Key Highlights Section */}
+      <section className="py-20 bg-indigo-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -169,15 +196,15 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="gradient-text">Services</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+              Why Choose <span className="gradient-text">Resonira</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              We provide comprehensive technology solutions to help your business thrive in the digital age.
+              Three pillars that define our approach to technology solutions.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -195,7 +222,7 @@ const Home = () => {
                     >
                       <feature.icon className="w-8 h-8 text-white" />
                     </motion.div>
-                    <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{feature.title}</h3>
                     <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
                   </CardContent>
                 </Card>
@@ -242,7 +269,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-indigo-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -251,7 +278,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               What Our <span className="gradient-text">Clients Say</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -303,7 +330,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">

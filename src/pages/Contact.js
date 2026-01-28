@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Send, 
-  CheckCircle, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  CheckCircle,
   AlertCircle,
   Clock,
   MessageSquare,
@@ -26,7 +26,8 @@ const Contact = () => {
     company: '',
     phone: '',
     service: '',
-    message: ''
+    message: '',
+    'bot-field': ''
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,23 +48,26 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'Srilekha@resonira.com',
+      value: 'info@resonira.com',
       description: 'Send us an email anytime',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      url: 'mailto:info@resonira.com'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '0000000000',
+      value: '+919154289324',
       description: 'Mon-Fri from 9am to 6pm',
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-green-500 to-emerald-500',
+      url: 'tel:+919154289324'
     },
     {
       icon: MapPin,
-      title: 'Office',
-      value: 'Hyderabad, India',
-      description: 'Visit us at our headquarters',
-      color: 'from-purple-500 to-pink-500'
+      title: 'Address',
+      value: 'Karimnagar, Telangana',
+      description: 'Click to open in Google Maps',
+      color: 'from-purple-500 to-pink-500',
+      url: 'https://www.google.com/maps/place/Resonira+Technologies/@18.4468946,79.1327256,19.44z/data=!4m12!1m5!3m4!2zMTjCsDI2JzQ5LjAiTiA3OcKwMDcnNTkuOSJF!8m2!3d18.4469444!4d79.1333056!3m5!1s0x3bccd965feaf1ff9:0x10369a08ba25eb0f!8m2!3d18.44694!4d79.1333866!16s%2Fg%2F11mm6dlz3t?entry=ttu&g_ep=EgoyMDI1MTIwMS4wIKXMDSoASAFQAw%3D%3D'
     },
     {
       icon: Clock,
@@ -103,7 +107,7 @@ const Contact = () => {
       ...prev,
       [name]: value
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
@@ -113,18 +117,32 @@ const Contact = () => {
     }
   };
 
+  const encode = (data) =>
+    Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
 
     setIsSubmitting(true);
-    
-    // Simulate API call
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const submission = {
+        'form-name': 'contact',
+        ...formData,
+      };
+
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode(submission),
+      });
+
       setIsSubmitted(true);
       setFormData({
         name: '',
@@ -132,7 +150,8 @@ const Contact = () => {
         company: '',
         phone: '',
         service: '',
-        message: ''
+        message: '',
+        'bot-field': ''
       });
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -143,7 +162,7 @@ const Contact = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen pt-16 flex items-center justify-center">
+      <div className="min-h-screen pt-24 flex items-center justify-center">
         <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -160,11 +179,11 @@ const Contact = () => {
                 >
                   <CheckCircle className="w-10 h-10 text-green-500" />
                 </motion.div>
-                <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+                <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Thank You!</h2>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
                   Your message has been sent successfully. We'll get back to you within 24 hours.
                 </p>
-                <Button 
+                <Button
                   onClick={() => setIsSubmitted(false)}
                   className="w-full"
                 >
@@ -179,7 +198,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-24">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -188,11 +207,11 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Get In <span className="gradient-text">Touch</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+              Let's Create Something That <span className="gradient-text">Resonates</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Ready to transform your business with AI and technology? Let's discuss your project 
+              Ready to transform your business with AI and technology? Let's discuss your project
               and see how we can help you achieve your goals.
             </p>
           </motion.div>
@@ -200,7 +219,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Info */}
-      <section className="py-16">
+      <section className="py-16 bg-indigo-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
@@ -213,15 +232,42 @@ const Contact = () => {
               >
                 <Card variant="glass" className="h-full text-center">
                   <CardContent>
-                    <motion.div
-                      className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-r ${info.color} flex items-center justify-center`}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    >
-                      <info.icon className="w-8 h-8 text-white" />
-                    </motion.div>
-                    <h3 className="text-lg font-semibold mb-2">{info.title}</h3>
-                    <p className="text-primary-500 font-medium mb-2">{info.value}</p>
+                    {info.url ? (
+                      <a
+                        href={info.url}
+                        target={info.url.startsWith('mailto:') || info.url.startsWith('tel:') ? '_self' : '_blank'}
+                        rel="noopener noreferrer"
+                      >
+                        <motion.div
+                          className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-r ${info.color} flex items-center justify-center cursor-pointer`}
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        >
+                          <info.icon className="w-8 h-8 text-white" />
+                        </motion.div>
+                      </a>
+                    ) : (
+                      <motion.div
+                        className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-r ${info.color} flex items-center justify-center`}
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                      >
+                        <info.icon className="w-8 h-8 text-white" />
+                      </motion.div>
+                    )}
+                    <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{info.title}</h3>
+                    {info.url ? (
+                      <a
+                        href={info.url}
+                        target={info.url.startsWith('mailto:') || info.url.startsWith('tel:') ? '_self' : '_blank'}
+                        rel="noopener noreferrer"
+                        className="text-primary-500 font-medium mb-2 inline-block hover:underline"
+                      >
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p className="text-primary-500 font-medium mb-2">{info.value}</p>
+                    )}
                     <p className="text-sm text-gray-600 dark:text-gray-300">{info.description}</p>
                   </CardContent>
                 </Card>
@@ -232,7 +278,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-indigo-50 dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
@@ -241,17 +287,35 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Send Us a <span className="gradient-text">Message</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
               Fill out the form below and we'll get back to you as soon as possible.
             </p>
+            <div className="mt-6">
+              <a href="https://calendly.com/srilekha-resonira/30min" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+                  Book an Appointment
+                </Button>
+              </a>
+            </div>
           </motion.div>
 
           <Card variant="elevated">
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                {/* Netlify hidden form-name field */}
+                <input type="hidden" name="form-name" value="contact" />
+                {/* Honeypot field */}
+                <input type="hidden" name="bot-field" value={formData['bot-field']} onChange={handleInputChange} />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name */}
                   <div>
@@ -265,11 +329,10 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors duration-200 ${
-                        errors.name 
-                          ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
-                          : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'
-                      }`}
+                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors duration-200 ${errors.name
+                        ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                        : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'
+                        }`}
                       placeholder="Enter your full name"
                     />
                     {errors.name && (
@@ -296,11 +359,10 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors duration-200 ${
-                        errors.email 
-                          ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
-                          : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'
-                      }`}
+                      className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors duration-200 ${errors.email
+                        ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                        : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'
+                        }`}
                       placeholder="Enter your email address"
                     />
                     {errors.email && (
@@ -319,7 +381,7 @@ const Contact = () => {
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       <Building className="inline w-4 h-4 mr-1" />
-                      Company
+                      Company/Organization (optional)
                     </label>
                     <input
                       type="text"
@@ -384,11 +446,10 @@ const Contact = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors duration-200 resize-none ${
-                      errors.message 
-                        ? 'border-red-500 bg-red-50 dark:bg-red-900/20' 
-                        : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'
-                    }`}
+                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors duration-200 resize-none ${errors.message
+                      ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                      : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700'
+                      }`}
                     placeholder="Tell us about your project requirements..."
                   />
                   {errors.message && (
@@ -412,7 +473,7 @@ const Contact = () => {
                     loading={isSubmitting}
                     className="px-8 py-4"
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
                     <Send className="ml-2 w-5 h-5" />
                   </Button>
                 </div>
@@ -432,7 +493,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Frequently Asked <span className="gradient-text">Questions</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
@@ -468,7 +529,7 @@ const Contact = () => {
               >
                 <Card variant="glass">
                   <CardContent>
-                    <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{faq.question}</h3>
                     <p className="text-gray-600 dark:text-gray-300">{faq.answer}</p>
                   </CardContent>
                 </Card>

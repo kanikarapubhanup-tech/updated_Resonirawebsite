@@ -8,6 +8,8 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^7.2.1",
+    "googleapis": "^128.0.0",
+    "groq-sdk": "^0.5.0",
     "lucide-react": "^0.263.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,7 +23,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "chatbot:ingest": "node ./chatbot/ingest.js"
   },
   "eslintConfig": {
     "extends": [

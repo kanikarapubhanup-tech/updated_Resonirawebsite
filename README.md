@@ -212,7 +212,7 @@ This project is licensed under the MIT License.
 ## 📞 Support
 
 For support or questions, please contact:
-- Email: hello@resonira.com
+- Email: info@resonira.com
 - Phone: +1 (555) 123-4567
 
 ---

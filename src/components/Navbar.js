@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon, Code, Zap, Home, Users, Briefcase, Mail } from 'lucide-react';
+import { Menu, X, Sun, Moon, Code, Home, Users, Briefcase, Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
+import Button from '../components/Button';
 import { useTheme } from '../contexts/ThemeContext';
 
 /**
@@ -37,40 +38,31 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700' 
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700'
+        : 'bg-transparent'
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-28">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <motion.div
-              className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Zap className="w-5 h-5 text-white" />
-            </motion.div>
-            <span className="text-xl font-bold gradient-text">Resonira</span>
+          <Link to="/" className="flex items-center">
+            <img src="/images/logo-final.png" alt="Resonira Technologies" className="h-24 w-auto object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 ml-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? 'text-primary-500'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-primary-500'
-                }`}
+                className={`relative px-3 py-2 text-base font-bold transition-colors duration-200 ${location.pathname === item.path
+                  ? 'text-primary-500'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-primary-500'
+                  }`}
               >
                 {item.name}
                 {location.pathname === item.path && (
@@ -82,10 +74,56 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
+            <a
+              href="https://calendly.com/srilekha-resonira/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="sm" className="px-4 py-2 text-base font-bold whitespace-nowrap">Book a Call</Button>
+            </a>
           </div>
 
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
+            {/* Location Display - Desktop */}
+            <a
+              href="https://maps.app.goo.gl/DPKBvU2jGotHN6BF6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors duration-200 ml-8"
+            >
+              <MapPin className="w-5 h-5 mr-1 text-primary-500" />
+              <span className="text-base font-bold whitespace-nowrap">Karimnagar, Telangana</span>
+            </a>
+
+            {/* Social Icons - Desktop */}
+            <div className="hidden md:flex items-center space-x-3 mr-8">
+              <a
+                href="https://www.instagram.com/resonira__technologies/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 hover:text-pink-600 transition-colors duration-200"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/people/Resonira-Technologies/61582985617083/?sk=followers"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-700 transition-colors duration-200"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/resonira-technologies/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:text-blue-600 transition-colors duration-200"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+
             <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
@@ -124,16 +162,28 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                    location.pathname === item.path
-                      ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-500'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-                  }`}
+                  className={`flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${location.pathname === item.path
+                    ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-500'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    }`}
                 >
                   <item.icon className="w-4 h-4" />
                   <span>{item.name}</span>
                 </Link>
               ))}
+
+              {/* Location Display - Mobile */}
+              <a
+                href="https://maps.app.goo.gl/DPKBvU2jGotHN6BF6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-2 border-t border-gray-100 dark:border-gray-800 mt-1 block"
+              >
+                <div className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors duration-200">
+                  <MapPin className="w-4 h-4 mr-2 text-primary-500" />
+                  <span className="text-sm font-medium">Karimnagar, Telangana</span>
+                </div>
+              </a>
             </div>
           </motion.div>
         )}

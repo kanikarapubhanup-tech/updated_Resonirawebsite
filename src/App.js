@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ChatbotWidget from './components/ChatbotWidget';
+import ScrollArrow from './components/ScrollArrow';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
@@ -19,11 +21,11 @@ function App() {
       <Router>
         <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
           <Navbar />
-          
+
           <AnimatePresence mode="wait">
             <Routes>
-              <Route 
-                path="/" 
+              <Route
+                path="/"
                 element={
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -33,10 +35,10 @@ function App() {
                   >
                     <Home />
                   </motion.div>
-                } 
+                }
               />
-              <Route 
-                path="/services" 
+              <Route
+                path="/services"
                 element={
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -46,10 +48,10 @@ function App() {
                   >
                     <Services />
                   </motion.div>
-                } 
+                }
               />
-              <Route 
-                path="/about" 
+              <Route
+                path="/about"
                 element={
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -59,10 +61,10 @@ function App() {
                   >
                     <About />
                   </motion.div>
-                } 
+                }
               />
-              <Route 
-                path="/portfolio" 
+              <Route
+                path="/portfolio"
                 element={
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -72,10 +74,10 @@ function App() {
                   >
                     <Portfolio />
                   </motion.div>
-                } 
+                }
               />
-              <Route 
-                path="/contact" 
+              <Route
+                path="/contact"
                 element={
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -85,11 +87,13 @@ function App() {
                   >
                     <Contact />
                   </motion.div>
-                } 
+                }
               />
             </Routes>
           </AnimatePresence>
-          
+
+          <ChatbotWidget />
+          <ScrollArrow />
           <Footer />
         </div>
       </Router>
