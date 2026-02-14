@@ -1,0 +1,74 @@
+{
+  "companyName": "Resonira",
+  "urls": [
+    "https://www.resonira.com/",
+    "https://www.resonira.com/services",
+    "https://www.resonira.com/about",
+    "https://www.resonira.com/portfolio",
+    "https://www.resonira.com/contact"
+  ],
+  "socials": [
+    "https://www.instagram.com/resonira__technologies/",
+    "https://www.facebook.com/people/Resonira-Technologies/61582985617083/?sk=followers",
+    "https://www.linkedin.com/company/resonira-technologies/posts/?feedView=all",
+    "https://www.linkedin.com/in/sri-lekha-resonira/",
+    "https://www.linkedin.com/in/quaisar-jahan-b91866225/",
+    "https://www.linkedin.com/in/sainath-pulluri-%E2%9C%85-71672948/",
+    "https://www.linkedin.com/in/tamlurkar-manoj-679527231/",
+    "https://www.linkedin.com/in/prabanjan-banala-6b471a205/"
+  ],
+  "texts": [
+    {
+      "title": "Tagline & Intro",
+      "url": null,
+      "text": "Trusted IT. Smarter AI. Lasting Impact. Resonira Technologies empowers businesses with future-ready digital solutions that echo innovation, precision, and impact. We specialize in scalable, secure, and innovative technology solutions that drive growth and transform industries."
+    },
+    {
+      "title": "Team",
+      "url": null,
+      "text": "Team Profiles: Srilekha (CEO & Founder) – Visionary leader passionate about AI and business transformation. LinkedIn: https://www.linkedin.com/in/sri-lekha-resonira/ | Quaisar Jahan (COO) – Operations leader driving excellence and growth. LinkedIn: https://www.linkedin.com/in/quaisar-jahan-b91866225/ | Agent Resonira (CTO) – AI agent leading technology strategy and innovation. | Sainath Pulluri (HR) – Builds and nurtures talent. LinkedIn: https://www.linkedin.com/in/sainath-pulluri-%E2%9C%85-71672948/ | Manoj (Product Manager) – Bridges business needs and technical solutions. LinkedIn: https://www.linkedin.com/in/tamlurkar-manoj-679527231/ | Prabanjan (AI Engineer) – ML specialist in deep learning and NLP. LinkedIn: https://www.linkedin.com/in/prabanjan-banala-6b471a205/"
+    },
+    {
+      "title": "Company Stats",
+      "url": null,
+      "text": "Stats & Highlights: 25+ Projects Delivered; 20+ Happy Clients; 3+ Years Experience; 98% Client Satisfaction."
+    },
+    {
+      "title": "Testimonials",
+      "url": null,
+      "text": "Testimonials: Sarah Chen (CEO, TechFlow Solutions): Resonira's AI-powered recommendation engine increased conversion rates by 40%. Michael Rodriguez (CTO, Blockchain Ventures): Robust and secure smart contract platform; launched ahead of schedule. Dr. Priya Sharma (Founder, MedTech Innovations): AI diagnostic system reduced analysis time by 60%."
+    },
+    {
+      "title": "Process",
+      "url": null,
+      "text": "Delivery Process: 01 Discovery & Planning – requirements and detailed plan. 02 Design & Architecture – solution architecture and UX. 03 Development & Testing – agile build and QA. 04 Deployment & Support – launch and ongoing maintenance."
+    },
+    {
+      "title": "Technologies",
+      "url": null,
+      "text": "Technologies: Frontend – React, TypeScript, Vue.js; Backend – Node.js; AI/ML – Python, TensorFlow; Cloud – AWS; DevOps – Docker, Kubernetes; Database – MongoDB, Redis; API – GraphQL."
+    },
+    {
+      "title": "Mission & Vision",
+      "url": null,
+      "text": "Mission: To resonate innovation into every industry by building reliable, scalable, and futuristic technology solutions. Vision: To be a global leader in crafting technology that echoes excellence and empowers businesses worldwide."
+    },
+    {
+      "title": "Values",
+      "url": null,
+      "text": "Innovation that Inspires; Integrity in Action; Collaboration that Resonates; Excellence in Delivery."
+    },
+    {
+      "title": "Services",
+      "url": null,
+      "text": "We provide AI solutions, software development, and related technology services, including AI/ML systems and automation, custom web & mobile apps, cloud & infrastructure, and digital transformation consulting."
+    },
+    {
+      "title": "Contact",
+      "url": null,
+      "text": "Email: info@resonira.com. Phone: +919154289324. Address: Hyderabad, India (Remote – Global Presence). Calendly: https://calendly.com/srilekha-resonira/30min"
+    }
+  ]
+}
+
+

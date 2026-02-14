@@ -1,0 +1,406 @@
+[
+    {
+        "id": 1,
+        "title": "AI-Powered Customer Service Platform",
+        "description": "Revolutionary customer service platform using natural language processing and machine learning to provide instant, accurate responses.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+        "category": "ai",
+        "technologies": [
+            "Python",
+            "TensorFlow",
+            "React",
+            "Node.js",
+            "MongoDB"
+        ],
+        "client": "TechCorp",
+        "year": "2025",
+        "link": "https://soa.resonira.com",
+        "features": [
+            "Natural Language Processing",
+            "Real-time Response Generation",
+            "Multi-language Support",
+            "Analytics Dashboard",
+            "API Integration"
+        ],
+        "results": {
+            "Response Time": "90% faster",
+            "Customer Satisfaction": "+45%",
+            "Cost Reduction": "60%"
+        }
+    },
+    {
+        "id": 2,
+        "title": "E-commerce Automation Suite",
+        "description": "Comprehensive automation solution for e-commerce businesses, streamlining inventory management, order processing, and customer communication.",
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+        "category": "automation",
+        "technologies": [
+            "Python",
+            "Django",
+            "PostgreSQL",
+            "Redis",
+            "AWS"
+        ],
+        "client": "ShopMaster",
+        "year": "2025",
+        "link": "https://example.com",
+        "features": [
+            "Inventory Management",
+            "Order Processing",
+            "Customer Communication",
+            "Analytics & Reporting",
+            "Multi-platform Integration"
+        ],
+        "results": {
+            "Processing Speed": "5x faster",
+            "Error Reduction": "85%",
+            "Revenue Growth": "+30%"
+        }
+    },
+    {
+        "id": 3,
+        "title": "MediCare Hospital Management System",
+        "description": "Comprehensive hospital management and analytics platform for clinics and hospitals, covering operations, patient data, and insights.",
+        "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
+        "category": "ai",
+        "technologies": [
+            "Python",
+            "Pandas",
+            "React",
+            "FastAPI",
+            "PostgreSQL"
+        ],
+        "client": "MediCare",
+        "year": "2025",
+        "link": "https://portfolio.resonira.com",
+        "features": [
+            "Hospital Management",
+            "Patient Data Analysis",
+            "Predictive Analytics",
+            "Compliance Reporting",
+            "Real-time Monitoring"
+        ],
+        "results": {
+            "Diagnosis Accuracy": "+25%",
+            "Processing Time": "70% faster",
+            "Operational Efficiency": "+40%"
+        }
+    },
+    {
+        "id": 4,
+        "title": "Real-time News & Media Application",
+        "description": "Modern news and media application delivering real-time updates, personalized feeds, and rich content across devices.",
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+        "category": "mobile",
+        "technologies": [
+            "React Native",
+            "Node.js",
+            "MongoDB",
+            "AWS"
+        ],
+        "client": "MediaNow",
+        "year": "2025",
+        "link": "https://portfolio.resonira.com",
+        "features": [
+            "Real-time News Updates",
+            "Personalized Feeds",
+            "Offline Reading",
+            "Multi-language Support",
+            "Rich Media Content"
+        ],
+        "results": {
+            "User Engagement": "+150%",
+            "Session Duration": "+60%",
+            "App Store Rating": "4.8/5"
+        }
+    },
+    {
+        "id": 5,
+        "title": "Cloud Infrastructure Migration",
+        "description": "Complete migration of legacy systems to modern cloud infrastructure, improving scalability and reducing operational costs.",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+        "category": "cloud",
+        "technologies": [
+            "AWS",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "Python"
+        ],
+        "client": "Enterprise Solutions Inc.",
+        "year": "2025",
+        "link": "https://example.com",
+        "features": [
+            "Infrastructure as Code",
+            "Auto-scaling",
+            "Load Balancing",
+            "Monitoring & Alerting",
+            "Disaster Recovery"
+        ],
+        "results": {
+            "Infrastructure Costs": "-40%",
+            "Performance": "+300%",
+            "Uptime": "99.9%"
+        }
+    },
+    {
+        "id": 6,
+        "title": "AI Video Automation & Reels Platform",
+        "description": "AI-powered video automation platform for creating, scheduling, and managing short-form reels and social content.",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+        "category": "web",
+        "technologies": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "FFmpeg",
+            "TensorFlow"
+        ],
+        "client": "Rise Beyond Now",
+        "year": "2025",
+        "link": "https://www.instagram.com/rise.beyond.now",
+        "features": [
+            "Automated Reel Generation",
+            "Template-based Editing",
+            "Scheduled Posting",
+            "Multi-platform Support",
+            "Analytics Dashboard"
+        ],
+        "results": {
+            "Content Output": "+300%",
+            "Production Time": "-70%",
+            "Audience Growth": "+120%"
+        }
+    },
+    {
+        "id": 7,
+        "title": "Swetha Sai Phani Clinic",
+        "description": "Complete clinic management system for Swetha Sai Phani Clinic with patient appointments, doctor management, and comprehensive healthcare administration.",
+        "image": "/images/swetha-clinic.png",
+        "category": "web",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "PostgreSQL",
+            "Tailwind CSS"
+        ],
+        "client": "Swetha Sai Phani Clinic",
+        "year": "2025",
+        "link": "https://swethasaiphaniclinics.com",
+        "features": [
+            "Online Appointment Booking",
+            "Patient Records Management",
+            "Doctor Schedule Management",
+            "Prescription Management",
+            "Payment Integration"
+        ],
+        "results": {
+            "Appointment Efficiency": "+80%",
+            "Patient Satisfaction": "+65%",
+            "Administrative Time": "-50%"
+        }
+    },
+    {
+        "id": 8,
+        "title": "Student Bus Tracking System",
+        "description": "Real-time GPS-based bus tracking system for schools, enabling parents and administrators to monitor student transportation safely.",
+        "image": "/images/student-bus-tracking.jpg",
+        "category": "mobile",
+        "technologies": [
+            "React Native",
+            "Node.js",
+            "MongoDB",
+            "Google Maps API",
+            "Socket.io"
+        ],
+        "client": "Student Bus Tracking",
+        "year": "2025",
+        "link": "#",
+        "features": [
+            "Real-time GPS Tracking",
+            "Parent Mobile App",
+            "Driver Management",
+            "Route Optimization",
+            "Push Notifications"
+        ],
+        "results": {
+            "Parent Satisfaction": "+90%",
+            "Route Efficiency": "+35%",
+            "Safety Incidents": "-75%"
+        }
+    },
+    {
+        "id": 9,
+        "title": "School ERP System",
+        "description": "Comprehensive school management ERP system covering admissions, attendance, academics, fees, and communication.",
+        "image": "/images/school-erp.png",
+        "category": "web",
+        "technologies": [
+            "React",
+            "Node.js",
+            "PostgreSQL",
+            "Redis",
+            "AWS"
+        ],
+        "client": "School ERP",
+        "year": "2025",
+        "link": "#",
+        "features": [
+            "Student Admissions Management",
+            "Attendance Tracking",
+            "Academic Performance",
+            "Fee Management",
+            "Parent-Teacher Communication"
+        ],
+        "results": {
+            "Administrative Efficiency": "+70%",
+            "Fee Collection": "+45%",
+            "Parent Engagement": "+80%"
+        }
+    },
+    {
+        "id": 10,
+        "title": "Freshmart E-commerce Platform",
+        "description": "Modern e-commerce platform for fresh groceries and daily essentials with real-time inventory and delivery tracking.",
+        "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=400&fit=crop",
+        "category": "web",
+        "technologies": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Stripe",
+            "Redis"
+        ],
+        "client": "Freshmart",
+        "year": "2025",
+        "link": "#",
+        "features": [
+            "Product Catalog Management",
+            "Shopping Cart & Checkout",
+            "Real-time Inventory",
+            "Delivery Tracking",
+            "Payment Gateway Integration"
+        ],
+        "results": {
+            "Online Orders": "+200%",
+            "Customer Retention": "+55%",
+            "Delivery Time": "-40%"
+        }
+    },
+    {
+        "id": 11,
+        "title": "Girish John Portfolio",
+        "description": "Professional portfolio website showcasing skills, projects, and experience with a modern, responsive design.",
+        "image": "/images/girish-john.png",
+        "category": "web",
+        "technologies": [
+            "React",
+            "Tailwind CSS",
+            "Framer Motion",
+            "EmailJS"
+        ],
+        "client": "Girish John",
+        "year": "2025",
+        "link": "https://www.girishjohn.in/",
+        "features": [
+            "Interactive User Interface",
+            "Project Showcase Gallery",
+            "Responsive Design",
+            "Contact Form Integration",
+            "Smooth Animations"
+        ],
+        "results": {
+            "User Engagement": "+150%",
+            "Lead Generation": "+40%",
+            "Page Load Speed": "0.8s"
+        }
+    },
+    {
+        "id": 12,
+        "title": "Digital Marketing & Growth Strategy",
+        "description": "Data-driven digital marketing campaign focusing on SEO, social media growth, and conversion rate optimization for maximum ROI.",
+        "image": "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=600&h=400&fit=crop",
+        "category": "marketing",
+        "technologies": [
+            "Google Analytics",
+            "SEO",
+            "Meta Ads",
+            "Content Strategy",
+            "SEMrush"
+        ],
+        "client": "GrowthScale",
+        "year": "2025",
+        "link": "#",
+        "features": [
+            "SEO Optimization",
+            "Social Media Management",
+            "PPC Campaigns",
+            "Conversion Rate Optimization",
+            "Analytics & Reporting"
+        ],
+        "results": {
+            "Organic Traffic": "+200%",
+            "Conversion Rate": "+45%",
+            "ROI": "350%"
+        }
+    },
+    {
+        "id": 13,
+        "title": "NextGen Smart City IoT Platform",
+        "description": "Upcoming massively scalable IoT platform for smart cities, managing traffic, waste, and energy consumption in real-time.",
+        "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=400&fit=crop",
+        "category": "automation",
+        "technologies": [
+            "IoT",
+            "Kafka",
+            "Rust",
+            "Kubernetes",
+            "TimescaleDB"
+        ],
+        "client": "SmartCity Initiative",
+        "year": "2026 (Upcoming)",
+        "link": "#",
+        "features": [
+            "Real-time Traffic Management",
+            "Waste Collection Optimization",
+            "Smart Grid Integration",
+            "Citizen Portal",
+            "Predictive Maintenance"
+        ],
+        "results": {
+            "Energy Savings": "Target 30%",
+            "Traffic Congestion": "Target -40%",
+            "Operational Cost": "Target -25%"
+        }
+    },
+    {
+        "id": 14,
+        "title": "AI-Driven Legal Assistant",
+        "description": "Upcoming legal tech solution using LLMs to assist lawyers in case research, document drafting, and precedent analysis.",
+        "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600&h=400&fit=crop",
+        "category": "ai",
+        "technologies": [
+            "Python",
+            "LLMs",
+            "Vector DB",
+            "React",
+            "FastAPI"
+        ],
+        "client": "Internal R&D",
+        "year": "2026 (Upcoming)",
+        "link": "#",
+        "features": [
+            "Case Law Research",
+            "Document Drafting",
+            "Contract Review",
+            "Legal Chatbot",
+            "Citation Analysis"
+        ],
+        "results": {
+            "Research Time": "Target -80%",
+            "Accuracy": "Target 99%",
+            "Cost Efficiency": "High"
+        }
+    }
+]
