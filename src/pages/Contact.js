@@ -11,7 +11,8 @@ import {
   MessageSquare,
   Calendar,
   User,
-  Building
+  Building,
+  Smartphone
 } from 'lucide-react';
 import Card, { CardContent } from '../components/Card';
 import Button from '../components/Button';
@@ -57,8 +58,8 @@ const Contact = () => {
       icon: Phone,
       title: 'Phone',
       details: [
-        { value: '+91 9154289324', url: 'tel:+919154289324' },
-        { value: '0878 4085 341', url: 'tel:08784085341' }
+        { value: '+91 9154289324', url: 'tel:+919154289324', icon: Smartphone },
+        { value: '0878 4085 341', url: 'tel:08784085341', icon: Phone }
       ],
       color: 'from-green-500 to-emerald-500',
       url: 'tel:+919154289324'
@@ -266,8 +267,9 @@ const Contact = () => {
                               href={detail.url}
                               target={detail.url.startsWith('tel:') ? '_self' : '_blank'}
                               rel="noopener noreferrer"
-                              className="text-primary-500 font-medium hover:underline"
+                              className="flex items-center text-primary-500 font-medium hover:underline"
                             >
+                              {detail.icon && <detail.icon className="w-4 h-4 mr-1" />}
                               {detail.value}
                             </a>
                             {i < info.details.length - 1 && <span className="text-gray-400">/</span>}
