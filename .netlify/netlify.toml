@@ -1,0 +1,48 @@
+functionsDirectory = "D:\\resonara\\netlify\\functions"
+functionsDirectoryOrigin = "config"
+redirectsOrigin = "config"
+headers = []
+
+[build]
+publish = "D:\\resonara\\build"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npm run build"
+functions = "D:\\resonara\\netlify\\functions"
+
+[build.environment]
+NODE_VERSION = "18"
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[functions]
+
+[functions."*"]
+
+[[plugins]]
+origin = "config"
+package = "@netlify/plugin-functions-install-core"
+
+[plugins.inputs]
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
