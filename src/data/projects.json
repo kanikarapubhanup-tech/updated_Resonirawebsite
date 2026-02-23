@@ -216,7 +216,7 @@
         ],
         "client": "Student Bus Tracking",
         "year": "2025",
-        "link": "#",
+        "link": "https://bustracking.resonira.in/",
         "features": [
             "Real-time GPS Tracking",
             "Parent Mobile App",
@@ -245,7 +245,7 @@
         ],
         "client": "School ERP",
         "year": "2025",
-        "link": "#",
+        "link": "https://school.resonira.in/login/",
         "features": [
             "Student Admissions Management",
             "Attendance Tracking",

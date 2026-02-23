@@ -8,7 +8,7 @@ import {
   TrendingUp,
   Globe,
   Code,
-  Github,
+
   Linkedin,
   Mail,
   Zap,
@@ -24,6 +24,25 @@ import Button from '../components/Button';
  * About page with company information and team showcase
  */
 const About = () => {
+  const [isExpanded, setIsExpanded] = React.useState(false);
+  const founderRef = React.useRef(null);
+
+  const handleToggle = () => {
+    if (isExpanded) {
+      founderRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    setIsExpanded(!isExpanded);
+  };
+
+  const [isCOOExpanded, setIsCOOExpanded] = React.useState(false);
+  const cooRef = React.useRef(null);
+
+  const handleCOOToggle = () => {
+    if (isCOOExpanded) {
+      cooRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    setIsCOOExpanded(!isCOOExpanded);
+  };
   const values = [
     {
       icon: Zap,
@@ -47,20 +66,7 @@ const About = () => {
     }
   ];
 
-  const team = [
-    {
-      name: 'Eakula Srilekha',
-      role: 'CEO of Resonira Technologies',
-      image: '/images/srilekha-ceo.png',
-      bio: 'Visionary leader passionate about AI and its potential to transform businesses.',
-      social: {
-        linkedin: 'https://www.linkedin.com/in/sri-lekha-resonira?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-        facebook: 'https://www.facebook.com/Eakulasrilu',
-        instagram: 'https://www.instagram.com/srilueakula?igsh=NHRxZTdnbDFtbmw5',
-        location: 'https://maps.app.goo.gl/Qg126C7rTHYC74P67'
-      }
-    }
-  ];
+
 
   const stats = [
     { number: '3+', label: 'Years Experience', icon: TrendingUp },
@@ -140,106 +146,181 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-8">
-            {team.map((member, index) => (
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden"
+            >
+              <div className="md:flex">
+                <div className="md:w-5/12 bg-blue-50 dark:bg-gray-750 p-8 lg:p-10 flex flex-col items-center text-center">
+                  <div className="w-64 h-64 mb-6 rounded-2xl overflow-hidden shadow-lg border-4 border-white dark:border-gray-600 transform hover:scale-105 transition-transform duration-300">
+                    <img
+                      src="/images/srilekha-ceo.png"
+                      alt="Ms. Srilekha Eakula"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+
+
+                  <div className="flex space-x-4 justify-center mt-2">
+                    <a href="https://www.linkedin.com/in/sri-lekha-resonira?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-gray-800 rounded-full text-[#0077b5] hover:bg-[#0077b5] hover:text-white hover:scale-110 transition-all shadow-sm">
+                      <Linkedin size={20} />
+                    </a>
+                    <a href="https://www.facebook.com/Eakulasrilu" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-gray-800 rounded-full text-[#1877F2] hover:bg-[#1877F2] hover:text-white hover:scale-110 transition-all shadow-sm">
+                      <Facebook size={20} />
+                    </a>
+                    <a href="https://www.instagram.com/srilueakula?igsh=NHRxZTdnbDFtbmw5" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-gray-800 rounded-full text-[#E4405F] hover:bg-[#E4405F] hover:text-white hover:scale-110 transition-all shadow-sm">
+                      <Instagram size={20} />
+                    </a>
+                    <a href="https://maps.app.goo.gl/Qg126C7rTHYC74P67" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-gray-800 rounded-full text-primary-500 hover:bg-primary-500 hover:text-white hover:scale-110 transition-all shadow-sm">
+                      <MapPin size={20} />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="md:w-7/12 p-8 lg:p-12 bg-white dark:bg-gray-800">
+                  <h3 ref={founderRef} className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Founder & CEO — Ms. Srilekha Eakula</h3>
+                  <div className="space-y-5 text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+                    <p>I’m Srilekha Eakula, Founder & CEO of Resonira Technologies.</p>
+                    <p>My journey began with academic foundations at Manipal Academy of Higher Education (MAHE) followed by Post-Graduation from T. A. Pai Management Institute (TAPMI). But my real education started outside classrooms — in businesses, markets, people, and real challenges.</p>
+
+                    {isExpanded && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        className="space-y-5"
+                      >
+                        <p>I started my career in the Banking and NBFC sector, where I learned how businesses survive, scale, and sometimes fail — not because of lack of effort, but because of lack of clarity. There, I understood that numbers tell stories, and every decision must make financial sense before it makes visual sense.</p>
+                        <p>Later, working as a Brand Manager in an international environment expanded my perspective. Travelling across multiple countries and working with diverse industries taught me that while markets differ in language and culture, they respond to the same fundamentals — trust, value, and consistency.</p>
+                        <div className="bg-primary-50 dark:bg-gray-700/50 p-5 rounded-xl border-l-4 border-primary-500 my-6">
+                          <p className="font-semibold text-gray-800 dark:text-gray-200 italic">
+                            "Over time I realized something important: the world doesn’t change slowly anymore — technology changes it instantly."
+                          </p>
+                        </div>
+                        <p>As artificial intelligence began reshaping industries, I consciously built my team and processes around this shift. Instead of resisting change, we adapted early — integrating AI into strategy, creativity, analytics, and execution. Because the future will not belong to businesses that work harder, but to those that work smarter.</p>
+                        <p>This belief led me to build Resonira Technologies — not just as a digital agency, but as a growth partner. Here, we combine strategy, psychology, technology, and finance to help businesses grow with direction and purpose.</p>
+                        <p>I don’t believe marketing should chase attention. I believe marketing should build credibility, confidence, and long-term value.</p>
+                        <p className="font-bold text-gray-900 dark:text-white pt-2">
+                          My mission is simple: Help businesses stop guessing and start growing — consciously, sustainably, and intelligently.
+                        </p>
+                      </motion.div>
+                    )}
+
+                    <button
+                      onClick={handleToggle}
+                      className="text-primary-600 hover:text-primary-700 font-semibold focus:outline-none flex items-center mt-2 group"
+                    >
+                      {isExpanded ? 'Read Less' : 'Read More'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* COO Section */}
+            <motion.div
+              className="text-center mb-16 mt-24"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+                Meet Our <span className="gradient-text">COO</span>
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Driving operational excellence and global innovation at Resonira.
+              </p>
+            </motion.div>
+
+            <div className="max-w-5xl mx-auto">
               <motion.div
-                key={member.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6 }}
+                className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden"
               >
-                <Card variant="elevated" className="h-full text-center !bg-blue-50 dark:!bg-gray-800">
-                  <CardContent>
-
-                    <motion.div
-                      className="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    >
+                <div className="md:flex">
+                  <div className="md:w-5/12 bg-blue-50 dark:bg-gray-750 p-8 lg:p-10 flex flex-col items-center text-center">
+                    <div className="w-72 h-96 mb-6 rounded-2xl overflow-hidden shadow-lg border-4 border-white dark:border-gray-600 transform hover:scale-105 transition-transform duration-300">
                       <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top"
+                        src="/images/quaisar-coo.jpg"
+                        alt="Quaisar Jahan"
+                        className="w-full h-full object-cover object-center"
                       />
-                    </motion.div>
-                    <h3 className="text-xl font-semibold mb-1 text-gray-900 dark:text-white">{member.name}</h3>
-                    <p className="text-primary-500 font-medium mb-3">{member.role}</p>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                      {member.bio}
-                    </p>
-                    <div className="flex justify-center space-x-3">
-                      {member.social.linkedin && (
-                        <motion.a
-                          href={member.social.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-[#0077b5] hover:bg-[#0077b5] hover:text-white transition-colors duration-200"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <Linkedin className="w-4 h-4" />
-                        </motion.a>
-                      )}
-                      {member.social.facebook && (
-                        <motion.a
-                          href={member.social.facebook}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-colors duration-200"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <Facebook className="w-4 h-4" />
-                        </motion.a>
-                      )}
-                      {member.social.instagram && (
-                        <motion.a
-                          href={member.social.instagram}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-[#E4405F] hover:bg-[#E4405F] hover:text-white transition-colors duration-200"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <Instagram className="w-4 h-4" />
-                        </motion.a>
-                      )}
-                      {member.social.location && (
-                        <motion.a
-                          href={member.social.location}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-primary-500 hover:bg-primary-500 hover:text-white transition-colors duration-200"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <MapPin className="w-4 h-4" />
-                        </motion.a>
-                      )}
-                      {member.social.github && (
-                        <motion.a
-                          href={member.social.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-black hover:text-white transition-colors duration-200"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <Github className="w-4 h-4" />
-                        </motion.a>
-                      )}
                     </div>
-                  </CardContent>
-                </Card>
+
+                    <div className="flex space-x-4 justify-center mt-2">
+                      <a href="https://www.linkedin.com/in/quaisar-jahan-b91866225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-gray-800 rounded-full text-[#0077b5] hover:bg-[#0077b5] hover:text-white hover:scale-110 transition-all shadow-sm">
+                        <Linkedin size={20} />
+                      </a>
+                      <a href="https://www.instagram.com/kesar_j?igsh=eTZuazk1a2RsejA0" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-gray-800 rounded-full text-[#E4405F] hover:bg-[#E4405F] hover:text-white hover:scale-110 transition-all shadow-sm">
+                        <Instagram size={20} />
+                      </a>
+                      <a href="https://maps.app.goo.gl/Qg126C7rTHYC74P67" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-gray-800 rounded-full text-primary-500 hover:bg-primary-500 hover:text-white hover:scale-110 transition-all shadow-sm">
+                        <MapPin size={20} />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="md:w-7/12 p-8 lg:p-12 bg-white dark:bg-gray-800">
+                    <h3 ref={cooRef} className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Chief Operating Officer — Quaisar Jahan</h3>
+                    <div className="space-y-5 text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+                      <p>I did not begin my journey with influence, authority, or a corner office. I began with hunger, discipline, and a quiet belief that I was capable of more.</p>
+                      <p>I completed my schooling at Kendriya Vidyalaya, where structure and consistency became part of my identity. I pursued BCA from the Institute of Management Education, Sahibabad, and later completed my MCA from Guru Jambeshwar University, Hisar.</p>
+
+                      {isCOOExpanded && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          className="space-y-5"
+                        >
+                          <p>Technology trained my mind to think logically. Education gave me direction. But life trained me to fight, adapt, and grow.</p>
+                          <p>My career started in sales, one of the toughest classrooms in the real world. Targets were high, pressure was constant, and results were everything. There were no shortcuts. I learned resilience when deals fell through, confidence when I had to face rejection, and discipline when performance had to speak louder than excuses.</p>
+                          <p>Recognition did not come because I asked for it. It came because I earned it.</p>
+                          <p>As I moved forward, I began working with international markets, interacting with families, professionals, and decision makers across borders. Every conversation sharpened my communication. Every target strengthened my focus. Every challenge expanded my vision.</p>
+                          <p>But the real transformation happened when I stopped thinking only about personal achievement and started thinking about systems, teams, and impact. I moved from closing individual deals to building processes that helped others perform better. I shifted from chasing numbers to creating structure. That shift changed everything.</p>
+                          <p>My background in technology allowed me to see a bigger picture. I realized that growth is not accidental, it is engineered. When technology, strategy, and people align, businesses do not just survive, they lead.</p>
+                          <p>Today, as Chief Operating Officer at Resonira Technologies, I oversee global operations across AI, Blockchain, Web3, Crypto, and Software Development. My role is simple in words but powerful in action, turn vision into execution and execution into measurable growth.</p>
+
+                          <p>I believe success is not about where you start. It is about how determined you are to evolve.<br />
+                            It is not about titles. It is about responsibility.<br />
+                            It is not about speed. It is about direction.</p>
+
+                          <p>From a young professional learning sales fundamentals to leading global technology operations, my journey has been built on one principle, never stop growing.</p>
+
+                          <div className="bg-primary-50 dark:bg-gray-700/50 p-5 rounded-xl border-l-4 border-primary-500 my-6">
+                            <p className="font-semibold text-gray-800 dark:text-gray-200 italic">
+                              "If there is one thing my story proves, it is this,<br />
+                              You do not need perfect conditions to rise.<br />
+                              You need commitment, courage, and the willingness to outgrow your previous version.<br /><br />
+                              And I am still evolving."
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
+
+                      <button
+                        onClick={handleCOOToggle}
+                        className="text-primary-600 hover:text-primary-700 font-semibold focus:outline-none flex items-center mt-2 group"
+                      >
+                        {isCOOExpanded ? 'Read Less' : 'Read More'}
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </div >
+      </section >
 
       {/* Mission & Vision */}
-      <section className="py-20">
+      < section className="py-20" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
@@ -289,10 +370,10 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Values */}
-      <section className="py-20 bg-indigo-50 dark:bg-gray-900">
+      < section className="py-20 bg-indigo-50 dark:bg-gray-900" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -335,10 +416,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Stats Section */}
-      <section className="py-20 bg-indigo-50 dark:bg-gray-900">
+      < section className="py-20 bg-indigo-50 dark:bg-gray-900" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -371,10 +452,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Timeline */}
-      <section className="py-20">
+      < section className="py-20" >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -419,10 +500,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
+      < section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500" >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -455,8 +536,8 @@ const About = () => {
             </div>
           </motion.div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 

@@ -11,7 +11,8 @@ import {
   Award,
   TrendingUp,
   Star,
-  Shield
+  Shield,
+  Calendar
 } from 'lucide-react';
 import Button from '../components/Button';
 import Card, { CardContent } from '../components/Card';
@@ -114,18 +115,36 @@ const Home = () => {
               Resonira Technologies empowers businesses with future-ready digital solutions that echo innovation, precision, and impact.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/services">
-                <Button size="lg" className="text-lg px-8 py-4">
-                  Explore Services
-                  <ArrowRight className="ml-2 w-5 h-5" />
+            <div className="flex flex-col items-center gap-6">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link to="/services">
+                  <Button size="lg" className="text-lg px-8 py-4">
+                    Explore Services
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
+
+              <a
+                href="https://calendly.com/srilekha-resonira/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="text-lg px-10 py-4 w-full sm:w-auto shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-primary-100 dark:border-primary-900 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 font-bold"
+                >
+                  <Calendar className="mr-2 w-5 h-5" />
+                  Book Appointment
                 </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                  Contact Us
-                </Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
