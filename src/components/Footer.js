@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   Mail,
-  Phone,
+  Smartphone,
   MapPin,
   Instagram,
   Facebook,
@@ -208,8 +208,12 @@ const Footer = () => {
                 <span>info@resonira.com</span>
               </a>
               <a href="tel:+919154289324" className="relative z-10 flex items-center text-gray-400 hover:text-primary-400 text-sm transition-colors duration-200 cursor-pointer hover:underline">
-                <Phone className="w-5 h-5 mr-3 text-green-500 flex-shrink-0" />
+                <Smartphone className="w-5 h-5 mr-3 text-green-500 flex-shrink-0" />
                 <span>+91 9154289324</span>
+              </a>
+              <a href="tel:+919391619324" className="relative z-10 flex items-center text-gray-400 hover:text-primary-400 text-sm transition-colors duration-200 cursor-pointer hover:underline">
+                <Smartphone className="w-5 h-5 mr-3 text-green-500 flex-shrink-0" />
+                <span>+91 9391619324</span>
               </a>
               <a href="tel:08784085341" className="relative z-10 flex items-center text-gray-400 hover:text-primary-400 text-sm transition-colors duration-200 cursor-pointer hover:underline">
                 <svg className="w-5 h-5 mr-3 flex-shrink-0 text-orange-500" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

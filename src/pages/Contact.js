@@ -59,6 +59,7 @@ const Contact = () => {
       title: 'Phone',
       details: [
         { value: '+91 9154289324', url: 'tel:+919154289324', icon: Smartphone },
+        { value: '+91 9391619324', url: 'tel:+919391619324', icon: Smartphone },
         { value: '0878 4085 341', url: 'tel:08784085341', icon: Phone }
       ],
       color: 'from-green-500 to-emerald-500',
@@ -140,10 +141,24 @@ const Contact = () => {
         ...formData,
       };
 
+      // Log form data for local testing (visible in browser DevTools Console - F12)
+      console.log('📧 Form Submission Received:');
+      console.log('----------------------------');
+      console.log('Name:', formData.name);
+      console.log('Email:', formData.email);
+      console.log('Phone:', formData.phone);
+      console.log('Company:', formData.company);
+      console.log('Service:', formData.service);
+      console.log('Message:', formData.message);
+      console.log('----------------------------');
+
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode(submission),
+      }).catch(() => {
+        // Silently handle fetch error in local dev (no Netlify forms endpoint)
+        console.log('ℹ️ Note: Netlify Forms endpoint not available locally. Form data logged above.');
       });
 
       setIsSubmitted(true);

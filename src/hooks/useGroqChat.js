@@ -13,6 +13,7 @@ const useGroqChat = (apiKey = null) => {
     const config = configLoader.getConfig();
     // Check multiple possible env var names (Netlify might use GROQ_API_KEY, React needs REACT_APP_ prefix)
     return config?.apiKeys?.groq ||
+      process.env.REACT_APP_GROQ_API_KEY ||
       process.env.GROQ_API_KEY ||
       '';
   }, [apiKey]);
@@ -220,30 +221,27 @@ Your purpose is to **engage naturally**, **help users understand ${companyName}*
           throw new Error('Backend function failed');
         }
       } catch (backendError) {
-        console.warn('Backend function failed, falling back to direct API call:', backendError);
+        console.warn('Backend function failed, falling back to local proxy:', backendError);
 
-        // Fallback to direct client-side call
-        const apiKey = getApiKey();
-        if (!apiKey) {
-          throw new Error('Groq API Key is missing for direct call');
-        }
+        // Fallback: use local dev proxy (/api/groq -> Groq API via setupProxy.js)
+        // The proxy injects the API key server-side, avoiding CORS and key exposure
+        const requestBody = {
+          messages: messages,
+          model: 'llama-3.1-8b-instant',
+          temperature: 0.8,
+          max_tokens: 1024,
+          top_p: 0.9,
+          frequency_penalty: 0.2,
+          presence_penalty: 0.2,
+          stop: ['---', '###']
+        };
 
-        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        const response = await fetch('/api/groq', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`
+            'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            messages: messages,
-            model: 'llama-3.1-8b-instant',
-            temperature: 0.8,
-            max_tokens: 1024,
-            top_p: 0.9,
-            frequency_penalty: 0.2,
-            presence_penalty: 0.2,
-            stop: ['---', '###']
-          })
+          body: JSON.stringify(requestBody)
         });
 
         if (!response.ok) {
