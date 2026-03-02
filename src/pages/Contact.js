@@ -122,11 +122,6 @@ const Contact = () => {
     }
   };
 
-  const encode = (data) =>
-    Object.keys(data)
-      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
