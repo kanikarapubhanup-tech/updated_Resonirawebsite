@@ -14,6 +14,7 @@ import {
   Building,
   Smartphone
 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import Card, { CardContent } from '../components/Card';
 import Button from '../components/Button';
 
@@ -136,30 +137,24 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const submission = {
-        'form-name': 'contact',
-        ...formData,
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        company: formData.company || 'Not provided',
+        service: formData.service || 'Not specified',
+        message: formData.message,
       };
 
-      // Log form data for local testing (visible in browser DevTools Console - F12)
-      console.log('📧 Form Submission Received:');
-      console.log('----------------------------');
-      console.log('Name:', formData.name);
-      console.log('Email:', formData.email);
-      console.log('Phone:', formData.phone);
-      console.log('Company:', formData.company);
-      console.log('Service:', formData.service);
-      console.log('Message:', formData.message);
-      console.log('----------------------------');
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
 
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode(submission),
-      }).catch(() => {
-        // Silently handle fetch error in local dev (no Netlify forms endpoint)
-        console.log('ℹ️ Note: Netlify Forms endpoint not available locally. Form data logged above.');
-      });
+      console.log('📧 Email sent successfully!');
 
       setIsSubmitted(true);
       setFormData({
@@ -172,7 +167,8 @@ const Contact = () => {
         'bot-field': ''
       });
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Error sending email:', error);
+      alert('Failed to send message. Please try again or email us directly at info@resonira.com');
     } finally {
       setIsSubmitting(false);
     }
