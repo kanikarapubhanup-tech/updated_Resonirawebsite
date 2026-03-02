@@ -402,5 +402,34 @@
             "Accuracy": "Target 99%",
             "Cost Efficiency": "High"
         }
+    },
+    {
+        "id": 15,
+        "title": "Swetha SaiPhani Clinic HMS",
+        "description": "Comprehensive Healthcare Management System for Swetha SaiPhani Clinics featuring online appointments, patient records, doctor management, and advanced medical care administration in Karimnagar, Telangana.",
+        "image": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&h=400&fit=crop",
+        "category": "web",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "Supabase",
+            "Tailwind CSS",
+            "Vite"
+        ],
+        "client": "Swetha SaiPhani Clinics",
+        "year": "2025",
+        "link": "https://swethasaiphani.clinic/",
+        "features": [
+            "Hospital Management System",
+            "Online Appointment Booking",
+            "Patient Records Management",
+            "Doctor Schedule Management",
+            "Prescription & Billing"
+        ],
+        "results": {
+            "Appointment Efficiency": "+85%",
+            "Patient Satisfaction": "+70%",
+            "Administrative Time": "-55%"
+        }
     }
 ]
