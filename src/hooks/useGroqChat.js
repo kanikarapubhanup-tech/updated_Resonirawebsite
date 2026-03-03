@@ -195,60 +195,46 @@ Your purpose is to **engage naturally**, **help users understand ${companyName}*
         }
       ];
 
-      // Call Netlify function to proxy Groq API (API key stays server-side)
+      // Try API endpoints in order:
+      // 1. /api/groq (Cloudflare Pages Function + local dev proxy)
+      // 2. /.netlify/functions/groq-chat (Netlify Functions)
       let data;
-      try {
-        const response = await fetch('/.netlify/functions/groq-chat', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            messages: messages,
-            model: 'llama-3.1-8b-instant',
-            temperature: 0.8,
-            max_tokens: 1024,
-            top_p: 0.9,
-            frequency_penalty: 0.2,
-            presence_penalty: 0.2,
-            stop: ['---', '###']
-          })
-        });
+      const requestBody = {
+        messages: messages,
+        model: 'llama-3.1-8b-instant',
+        temperature: 0.8,
+        max_tokens: 1024,
+        top_p: 0.9,
+        frequency_penalty: 0.2,
+        presence_penalty: 0.2,
+        stop: ['---', '###']
+      };
 
-        if (response.ok) {
-          data = await response.json();
-        } else {
-          throw new Error('Backend function failed');
+      const endpoints = ['/api/groq', '/.netlify/functions/groq-chat'];
+      let lastError = null;
+
+      for (const endpoint of endpoints) {
+        try {
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(requestBody)
+          });
+
+          if (response.ok) {
+            data = await response.json();
+            break;
+          } else {
+            throw new Error(`${endpoint} returned ${response.status}`);
+          }
+        } catch (err) {
+          console.warn(`Endpoint ${endpoint} failed:`, err.message);
+          lastError = err;
         }
-      } catch (backendError) {
-        console.warn('Backend function failed, falling back to local proxy:', backendError);
+      }
 
-        // Fallback: use local dev proxy (/api/groq -> Groq API via setupProxy.js)
-        // The proxy injects the API key server-side, avoiding CORS and key exposure
-        const requestBody = {
-          messages: messages,
-          model: 'llama-3.1-8b-instant',
-          temperature: 0.8,
-          max_tokens: 1024,
-          top_p: 0.9,
-          frequency_penalty: 0.2,
-          presence_penalty: 0.2,
-          stop: ['---', '###']
-        };
-
-        const response = await fetch('/api/groq', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(requestBody)
-        });
-
-        if (!response.ok) {
-          const errorData = await response.json().catch(() => ({}));
-          throw new Error(`Groq API error: ${errorData.error?.message || response.statusText}`);
-        }
-        data = await response.json();
+      if (!data) {
+        throw new Error(`All API endpoints failed. Last error: ${lastError?.message}`);
       }
 
       // Handle response
