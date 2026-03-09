@@ -71,7 +71,7 @@ const Footer = () => {
       </section>
       <section>
         <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">4. Contact Us</h4>
-        <p>If you have questions about this policy, please contact us at <a href="mailto:info@resonira.com" className="text-primary-500">info@resonira.com</a>.</p>
+        <p>If you have questions about this policy, please contact us at <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@resonira.com" target="_blank" rel="noopener noreferrer" className="text-primary-500">info@resonira.com</a>.</p>
       </section>
     </div>
   );
@@ -203,7 +203,7 @@ const Footer = () => {
           <div className="flex flex-col">
             <h3 className="text-base font-bold text-white uppercase tracking-wider mb-6 h-20 flex items-center">Contact</h3>
             <div className="flex flex-col gap-3">
-              <a href="mailto:info@resonira.com" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center text-gray-400 hover:text-primary-400 text-sm transition-colors duration-200 cursor-pointer hover:underline">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@resonira.com" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center text-gray-400 hover:text-primary-400 text-sm transition-colors duration-200 cursor-pointer hover:underline">
                 <Mail className="w-5 h-5 mr-3 text-red-500 flex-shrink-0" />
                 <span>info@resonira.com</span>
               </a>

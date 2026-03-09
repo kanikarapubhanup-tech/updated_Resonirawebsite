@@ -62,7 +62,7 @@ const PrivacyPolicy = () => {
                             <p className="text-gray-600 dark:text-gray-300 mb-4">
                                 If you have any questions about this Privacy Policy, please contact us at:
                             </p>
-                            <p className="text-primary-500 font-medium">info@resonira.com</p>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@resonira.com" target="_blank" rel="noopener noreferrer" className="text-primary-500 font-medium hover:underline">info@resonira.com</a>
                         </section>
                     </div>
                 </motion.div>

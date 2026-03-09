@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "title": "AI-Powered Customer Service Platform",
+        "title": "AI Voice Assistant",
         "description": "Revolutionary customer service platform using natural language processing and machine learning to provide instant, accurate responses.",
         "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
         "category": "ai",
@@ -26,35 +26,6 @@
             "Response Time": "90% faster",
             "Customer Satisfaction": "+45%",
             "Cost Reduction": "60%"
-        }
-    },
-    {
-        "id": 2,
-        "title": "E-commerce Automation Suite",
-        "description": "Comprehensive automation solution for e-commerce businesses, streamlining inventory management, order processing, and customer communication.",
-        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-        "category": "automation",
-        "technologies": [
-            "Python",
-            "Django",
-            "PostgreSQL",
-            "Redis",
-            "AWS"
-        ],
-        "client": "ShopMaster",
-        "year": "2025",
-        "link": "https://example.com",
-        "features": [
-            "Inventory Management",
-            "Order Processing",
-            "Customer Communication",
-            "Analytics & Reporting",
-            "Multi-platform Integration"
-        ],
-        "results": {
-            "Processing Speed": "5x faster",
-            "Error Reduction": "85%",
-            "Revenue Growth": "+30%"
         }
     },
     {
@@ -100,7 +71,6 @@
         ],
         "client": "MediaNow",
         "year": "2025",
-        "link": "https://portfolio.resonira.com",
         "features": [
             "Real-time News Updates",
             "Personalized Feeds",
@@ -112,35 +82,6 @@
             "User Engagement": "+150%",
             "Session Duration": "+60%",
             "App Store Rating": "4.8/5"
-        }
-    },
-    {
-        "id": 5,
-        "title": "Cloud Infrastructure Migration",
-        "description": "Complete migration of legacy systems to modern cloud infrastructure, improving scalability and reducing operational costs.",
-        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
-        "category": "cloud",
-        "technologies": [
-            "AWS",
-            "Docker",
-            "Kubernetes",
-            "Terraform",
-            "Python"
-        ],
-        "client": "Enterprise Solutions Inc.",
-        "year": "2025",
-        "link": "https://example.com",
-        "features": [
-            "Infrastructure as Code",
-            "Auto-scaling",
-            "Load Balancing",
-            "Monitoring & Alerting",
-            "Disaster Recovery"
-        ],
-        "results": {
-            "Infrastructure Costs": "-40%",
-            "Performance": "+300%",
-            "Uptime": "99.9%"
         }
     },
     {
@@ -158,7 +99,6 @@
         ],
         "client": "Rise Beyond Now",
         "year": "2025",
-        "link": "https://www.instagram.com/rise.beyond.now",
         "features": [
             "Automated Reel Generation",
             "Template-based Editing",
@@ -260,92 +200,6 @@
         }
     },
     {
-        "id": 10,
-        "title": "Freshmart E-commerce Platform",
-        "description": "Modern e-commerce platform for fresh groceries and daily essentials with real-time inventory and delivery tracking.",
-        "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=400&fit=crop",
-        "category": "web",
-        "technologies": [
-            "React",
-            "Node.js",
-            "MongoDB",
-            "Stripe",
-            "Redis"
-        ],
-        "client": "Freshmart",
-        "year": "2025",
-        "link": "https://freshmartweb.resonira.in/",
-        "features": [
-            "Product Catalog Management",
-            "Shopping Cart & Checkout",
-            "Real-time Inventory",
-            "Delivery Tracking",
-            "Payment Gateway Integration"
-        ],
-        "results": {
-            "Online Orders": "+200%",
-            "Customer Retention": "+55%",
-            "Delivery Time": "-40%"
-        }
-    },
-    {
-        "id": 11,
-        "title": "Girish John Portfolio",
-        "description": "Professional portfolio website showcasing skills, projects, and experience with a modern, responsive design.",
-        "image": "/images/girish-john.png",
-        "category": "web",
-        "technologies": [
-            "React",
-            "Tailwind CSS",
-            "Framer Motion",
-            "EmailJS"
-        ],
-        "client": "Girish John",
-        "year": "2025",
-        "link": "https://www.girishjohn.in/",
-        "features": [
-            "Interactive User Interface",
-            "Project Showcase Gallery",
-            "Responsive Design",
-            "Contact Form Integration",
-            "Smooth Animations"
-        ],
-        "results": {
-            "User Engagement": "+150%",
-            "Lead Generation": "+40%",
-            "Page Load Speed": "0.8s"
-        }
-    },
-    {
-        "id": 12,
-        "title": "Digital Marketing & Growth Strategy",
-        "description": "Data-driven digital marketing campaign focusing on SEO, social media growth, and conversion rate optimization for maximum ROI.",
-        "image": "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=600&h=400&fit=crop",
-        "category": "marketing",
-        "technologies": [
-            "Google Analytics",
-            "SEO",
-            "Meta Ads",
-            "Content Strategy",
-            "SEMrush"
-        ],
-        "client": "GrowthScale",
-        "year": "2025",
-        "link": "#",
-        "features": [
-            "SEO Optimization",
-            "Social Media Management",
-            "PPC Campaigns",
-            "Conversion Rate Optimization",
-            "Analytics & Reporting"
-        ],
-        "results": {
-            "Organic Traffic": "+200%",
-            "Conversion Rate": "+45%",
-            "ROI": "350%"
-        }
-    },
-    {
         "id": 13,
         "title": "NextGen Smart City IoT Platform",
         "description": "Upcoming massively scalable IoT platform for smart cities, managing traffic, waste, and energy consumption in real-time.",
@@ -360,7 +214,6 @@
         ],
         "client": "SmartCity Initiative",
         "year": "2026 (Upcoming)",
-        "link": "#",
         "features": [
             "Real-time Traffic Management",
             "Waste Collection Optimization",
@@ -389,7 +242,6 @@
         ],
         "client": "Internal R&D",
         "year": "2026 (Upcoming)",
-        "link": "#",
         "features": [
             "Case Law Research",
             "Document Drafting",
@@ -430,6 +282,61 @@
             "Appointment Efficiency": "+85%",
             "Patient Satisfaction": "+70%",
             "Administrative Time": "-55%"
+        }
+    },
+    {
+        "id": 16,
+        "title": "Palle News",
+        "description": "A hyper-local news and community engagement platform bringing 'Local to Popular' through event posters, verified local news, and job notifications for rural areas.",
+        "image": "/images/palle-news.jpg",
+        "category": "mobile",
+        "technologies": [
+            "React Native",
+            "Node.js",
+            "MongoDB",
+            "Tailwind CSS"
+        ],
+        "client": "Palle Team",
+        "year": "2025",
+        "features": [
+            "Local News Reporting",
+            "Event Poster Generation",
+            "Job Notifications Hub",
+            "Vernacular Language Support",
+            "Offline Capability"
+        ],
+        "results": {
+            "Local News Reach": "+50k Users",
+            "Daily Posters": "200+",
+            "Information Velocity": "Real-time"
+        }
+    },
+    {
+        "id": 17,
+        "title": "Job Kraves",
+        "description": "An intelligent recruitment and job portal that streamlines the hiring process, connecting top-tier talent with industry-leading organizations through advanced matching algorithms.",
+        "image": "/images/job-kraves.png",
+        "category": "web",
+        "technologies": [
+            "React",
+            "Node.js",
+            "PostgreSQL",
+            "AI Matching",
+            "Cloudinary"
+        ],
+        "client": "Job Kraves",
+        "year": "2025",
+        "features": [
+            "AI-powered Job Matching",
+            "Responsive Resume Builder",
+            "Employer Dashboard",
+            "Real-time Interview Scheduling",
+            "Advanced Search Filters"
+        ],
+        "results": {
+            "Hiring Speed": "40% faster",
+            "Candidate Quality": "+50%",
+            "User Growth": "+25k Applicants"
         }
     }
 ]

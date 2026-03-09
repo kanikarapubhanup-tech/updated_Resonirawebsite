@@ -85,6 +85,11 @@ const About = () => {
       year: '2025',
       title: 'First AI Product',
       description: 'Launched our first AI-powered solution, helping businesses automate their customer service operations.'
+    },
+    {
+      year: '2026',
+      title: 'Future Vision',
+      description: "Continuing to innovate and push the boundaries of what's possible with AI and technology."
     }
     /* {
        year: '2021',
@@ -184,8 +189,8 @@ const About = () => {
                 <div className="md:w-7/12 p-8 lg:p-12 bg-white dark:bg-gray-800">
                   <h3 ref={founderRef} className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Founder & CEO — Ms. Srilekha Eakula</h3>
                   <div className="space-y-5 text-gray-600 dark:text-gray-300 leading-relaxed text-base">
-                    <p>I’m Srilekha Eakula, Founder & CEO of Resonira Technologies.</p>
-                    <p>My journey began with academic foundations at Manipal Academy of Higher Education (MAHE) followed by Post-Graduation from T. A. Pai Management Institute (TAPMI). But my real education started outside classrooms — in businesses, markets, people, and real challenges.</p>
+                    <p>Srilekha Eakula, Founder and CEO of Resonira Technologies, is driven by a clear belief — businesses don’t fail due to lack of effort; they fail due to lack of clarity. With academic foundations from the Manipal Academy of Higher Education (MAHE) and a Post-Graduate degree from T. A. Pai Management Institute (TAPMI), her journey blends structured learning with real-world business experience.</p>
+                    <p>She began her career in the Banking and NBFC sector, where she developed a deep understanding of financial systems, risk assessment, and business sustainability. It was here she recognized that numbers tell powerful stories — and that every strategic move must make financial sense before it makes visual sense.</p>
 
                     {isExpanded && (
                       <motion.div
@@ -193,19 +198,15 @@ const About = () => {
                         animate={{ opacity: 1, height: 'auto' }}
                         className="space-y-5"
                       >
-                        <p>I started my career in the Banking and NBFC sector, where I learned how businesses survive, scale, and sometimes fail — not because of lack of effort, but because of lack of clarity. There, I understood that numbers tell stories, and every decision must make financial sense before it makes visual sense.</p>
-                        <p>Later, working as a Brand Manager in an international environment expanded my perspective. Travelling across multiple countries and working with diverse industries taught me that while markets differ in language and culture, they respond to the same fundamentals — trust, value, and consistency.</p>
+                        <p>Her transition into an international Brand Management role expanded her worldview. Working across diverse countries and industries, she observed that while markets differ in culture and language, they respond to universal fundamentals: trust, value, and consistency. This exposure shaped her ability to align brand strategy with measurable business outcomes.</p>
+                        <p>As technology began transforming industries at unprecedented speed, Srilekha chose adaptation over hesitation. She proactively integrated Artificial Intelligence into business strategy, analytics, creativity, and execution — building teams and processes designed for the future. Her philosophy is simple: the next generation of successful businesses will not be those that work harder, but those that work smarter.</p>
+                        <p>This vision led to the creation of Resonira Technologies — not merely as a digital agency, but as a strategic growth partner. The company operates at the intersection of psychology, technology, finance, and brand strategy to help businesses grow with clarity, direction, and long-term purpose.</p>
+                        <p>Srilekha believes marketing should not chase attention; it should build credibility, confidence, and sustainable value.</p>
                         <div className="bg-primary-50 dark:bg-gray-700/50 p-5 rounded-xl border-l-4 border-primary-500 my-6">
                           <p className="font-semibold text-gray-800 dark:text-gray-200 italic">
-                            "Over time I realized something important: the world doesn’t change slowly anymore — technology changes it instantly."
+                            "Her mission is to help businesses stop guessing and start growing — consciously, intelligently, and with financial clarity."
                           </p>
                         </div>
-                        <p>As artificial intelligence began reshaping industries, I consciously built my team and processes around this shift. Instead of resisting change, we adapted early — integrating AI into strategy, creativity, analytics, and execution. Because the future will not belong to businesses that work harder, but to those that work smarter.</p>
-                        <p>This belief led me to build Resonira Technologies — not just as a digital agency, but as a growth partner. Here, we combine strategy, psychology, technology, and finance to help businesses grow with direction and purpose.</p>
-                        <p>I don’t believe marketing should chase attention. I believe marketing should build credibility, confidence, and long-term value.</p>
-                        <p className="font-bold text-gray-900 dark:text-white pt-2">
-                          My mission is simple: Help businesses stop guessing and start growing — consciously, sustainably, and intelligently.
-                        </p>
                       </motion.div>
                     )}
 
@@ -270,8 +271,8 @@ const About = () => {
                   <div className="md:w-7/12 p-8 lg:p-12 bg-white dark:bg-gray-800">
                     <h3 ref={cooRef} className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Chief Operating Officer — Quaisar Jahan</h3>
                     <div className="space-y-5 text-gray-600 dark:text-gray-300 leading-relaxed text-base">
-                      <p>I did not begin my journey with influence, authority, or a corner office. I began with hunger, discipline, and a quiet belief that I was capable of more.</p>
-                      <p>I completed my schooling at Kendriya Vidyalaya, where structure and consistency became part of my identity. I pursued BCA from the Institute of Management Education, Sahibabad, and later completed my MCA from Guru Jambeshwar University, Hisar.</p>
+                      <p>Quaisar Jahan serves as the Chief Operating Officer at Resonira Technologies, leading operational strategy and execution across global markets. Her journey reflects disciplined growth, strategic thinking, and performance-driven leadership.</p>
+                      <p>She completed her Master’s in Technology from Guru Jambeshwar University of Science and Technology, strengthening her analytical mindset and systems-driven approach.</p>
 
                       {isCOOExpanded && (
                         <motion.div
@@ -279,26 +280,13 @@ const About = () => {
                           animate={{ opacity: 1, height: 'auto' }}
                           className="space-y-5"
                         >
-                          <p>Technology trained my mind to think logically. Education gave me direction. But life trained me to fight, adapt, and grow.</p>
-                          <p>My career started in sales, one of the toughest classrooms in the real world. Targets were high, pressure was constant, and results were everything. There were no shortcuts. I learned resilience when deals fell through, confidence when I had to face rejection, and discipline when performance had to speak louder than excuses.</p>
-                          <p>Recognition did not come because I asked for it. It came because I earned it.</p>
-                          <p>As I moved forward, I began working with international markets, interacting with families, professionals, and decision makers across borders. Every conversation sharpened my communication. Every target strengthened my focus. Every challenge expanded my vision.</p>
-                          <p>But the real transformation happened when I stopped thinking only about personal achievement and started thinking about systems, teams, and impact. I moved from closing individual deals to building processes that helped others perform better. I shifted from chasing numbers to creating structure. That shift changed everything.</p>
-                          <p>My background in technology allowed me to see a bigger picture. I realized that growth is not accidental, it is engineered. When technology, strategy, and people align, businesses do not just survive, they lead.</p>
-                          <p>Today, as Chief Operating Officer at Resonira Technologies, I oversee global operations across AI, Blockchain, Web3, Crypto, and Software Development. My role is simple in words but powerful in action, turn vision into execution and execution into measurable growth.</p>
-
-                          <p>I believe success is not about where you start. It is about how determined you are to evolve.<br />
-                            It is not about titles. It is about responsibility.<br />
-                            It is not about speed. It is about direction.</p>
-
-                          <p>From a young professional learning sales fundamentals to leading global technology operations, my journey has been built on one principle, never stop growing.</p>
+                          <p>She began her career in sales, gaining hands-on experience in revenue growth, client engagement, and performance accountability. Working in high-pressure environments, she developed resilience, negotiation capability, and a results-focused execution style. Her consistent performance expanded her exposure to international markets and cross-border stakeholders.</p>
+                          <p>As her responsibilities evolved, she transitioned from individual contribution to operational leadership — designing scalable systems, improving team efficiency, and aligning execution with long-term strategy. Her ability to integrate technology with structured business processes enabled sustainable and measurable growth.</p>
+                          <p>Today, she oversees global operations across AI, Blockchain, Web3, Crypto, and Software Development. Her focus is on converting strategic vision into disciplined execution, ensuring operational clarity, scalability, and measurable impact.</p>
 
                           <div className="bg-primary-50 dark:bg-gray-700/50 p-5 rounded-xl border-l-4 border-primary-500 my-6">
                             <p className="font-semibold text-gray-800 dark:text-gray-200 italic">
-                              "If there is one thing my story proves, it is this,<br />
-                              You do not need perfect conditions to rise.<br />
-                              You need commitment, courage, and the willingness to outgrow your previous version.<br /><br />
-                              And I am still evolving."
+                              "Quaisar believes sustainable success is built on accountability, direction, and continuous evolution — where leadership is defined by responsibility and results."
                             </p>
                           </div>
                         </motion.div>

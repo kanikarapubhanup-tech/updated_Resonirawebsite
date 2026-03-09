@@ -53,7 +53,7 @@ const Contact = () => {
       value: 'info@resonira.com',
       description: 'Send us an email anytime',
       color: 'from-blue-500 to-cyan-500',
-      url: 'mailto:info@resonira.com'
+      url: 'https://mail.google.com/mail/?view=cm&fs=1&to=info@resonira.com'
     },
     {
       icon: Phone,
@@ -132,14 +132,25 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Send email using EmailJS
+      // Combine all fields into the message so they appear even if the EmailJS template only uses {{message}}
+      const fullMessage = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Company: ${formData.company || 'Not provided'}
+Service: ${formData.service || 'Not specified'}
+
+Message:
+${formData.message}
+      `.trim();
+
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone || 'Not provided',
         company: formData.company || 'Not provided',
         service: formData.service || 'Not specified',
-        message: formData.message,
+        message: fullMessage,
       };
 
       await emailjs.send(
