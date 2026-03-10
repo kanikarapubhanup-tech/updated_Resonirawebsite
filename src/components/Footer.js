@@ -13,6 +13,7 @@ import {
   Send
 } from 'lucide-react';
 import Modal from './Modal';
+import emailjs from '@emailjs/browser';
 
 /**
  * Footer component with newsletter signup and social links
@@ -20,14 +21,39 @@ import Modal from './Modal';
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeModal, setActiveModal] = useState(null); // 'privacy', 'terms', or null
 
-  const handleNewsletterSubmit = (e) => {
+  const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    setIsSubmitting(true);
+    try {
+      const templateParams = {
+        from_name: 'Newsletter Subscriber',
+        from_email: email,
+        phone: 'Not provided',
+        company: 'Not provided',
+        service: 'Newsletter Subscription',
+        message: `New newsletter subscription from: ${email}`,
+      };
+
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
+
       setIsSubscribed(true);
       setEmail('');
       setTimeout(() => setIsSubscribed(false), 3000);
+    } catch (error) {
+      console.error('Error sending subscription email:', error);
+      alert('Failed to subscribe. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -179,12 +205,13 @@ const Footer = () => {
                 />
                 <motion.button
                   type="submit"
-                  className="w-full h-10 px-4 bg-primary-500 hover:bg-primary-600 rounded-lg transition-colors duration-200 flex items-center justify-center text-sm font-medium"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  disabled={isSubmitting}
+                  className="w-full h-10 px-4 bg-primary-500 hover:bg-primary-600 rounded-lg transition-colors duration-200 flex items-center justify-center text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={!isSubmitting ? { scale: 1.05 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.95 } : {}}
                 >
-                  <span className="mr-2">Subscribe</span>
-                  <Send className="w-4 h-4" />
+                  <span className="mr-2">{isSubmitting ? 'Subscribing...' : 'Subscribe'}</span>
+                  {!isSubmitting && <Send className="w-4 h-4" />}
                 </motion.button>
               </div>
               {isSubscribed && (
