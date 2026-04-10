@@ -1,0 +1,342 @@
+[
+    {
+        "id": 1,
+        "title": "AI Voice Assistant",
+        "description": "Revolutionary customer service platform using natural language processing and machine learning to provide instant, accurate responses.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+        "category": "ai",
+        "technologies": [
+            "Python",
+            "TensorFlow",
+            "React",
+            "Node.js",
+            "MongoDB"
+        ],
+        "client": "TechCorp",
+        "year": "2025",
+        "link": "https://soa.resonira.com",
+        "features": [
+            "Natural Language Processing",
+            "Real-time Response Generation",
+            "Multi-language Support",
+            "Analytics Dashboard",
+            "API Integration"
+        ],
+        "results": {
+            "Response Time": "90% faster",
+            "Customer Satisfaction": "+45%",
+            "Cost Reduction": "60%"
+        }
+    },
+    {
+        "id": 3,
+        "title": "MediCare Hospital Management System",
+        "description": "Comprehensive hospital management and analytics platform for clinics and hospitals, covering operations, patient data, and insights.",
+        "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
+        "category": "ai",
+        "technologies": [
+            "Python",
+            "Pandas",
+            "React",
+            "FastAPI",
+            "PostgreSQL"
+        ],
+        "client": "MediCare",
+        "year": "2025",
+        "link": "https://portfolio.resonira.com",
+        "features": [
+            "Hospital Management",
+            "Patient Data Analysis",
+            "Predictive Analytics",
+            "Compliance Reporting",
+            "Real-time Monitoring"
+        ],
+        "results": {
+            "Diagnosis Accuracy": "+25%",
+            "Processing Time": "70% faster",
+            "Operational Efficiency": "+40%"
+        }
+    },
+    {
+        "id": 4,
+        "title": "Real-time News & Media Application",
+        "description": "Modern news and media application delivering real-time updates, personalized feeds, and rich content across devices.",
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+        "category": "mobile",
+        "technologies": [
+            "React Native",
+            "Node.js",
+            "MongoDB",
+            "AWS"
+        ],
+        "client": "MediaNow",
+        "year": "2025",
+        "features": [
+            "Real-time News Updates",
+            "Personalized Feeds",
+            "Offline Reading",
+            "Multi-language Support",
+            "Rich Media Content"
+        ],
+        "results": {
+            "User Engagement": "+150%",
+            "Session Duration": "+60%",
+            "App Store Rating": "4.8/5"
+        }
+    },
+    {
+        "id": 6,
+        "title": "AI Video Automation & Reels Platform",
+        "description": "AI-powered video automation platform for creating, scheduling, and managing short-form reels and social content.",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+        "category": "web",
+        "technologies": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "FFmpeg",
+            "TensorFlow"
+        ],
+        "client": "Rise Beyond Now",
+        "year": "2025",
+        "features": [
+            "Automated Reel Generation",
+            "Template-based Editing",
+            "Scheduled Posting",
+            "Multi-platform Support",
+            "Analytics Dashboard"
+        ],
+        "results": {
+            "Content Output": "+300%",
+            "Production Time": "-70%",
+            "Audience Growth": "+120%"
+        }
+    },
+    {
+        "id": 7,
+        "title": "Swetha Sai Phani Clinic",
+        "description": "Complete clinic management system for Swetha Sai Phani Clinic with patient appointments, doctor management, and comprehensive healthcare administration.",
+        "image": "/images/swetha-clinic.png",
+        "category": "web",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "PostgreSQL",
+            "Tailwind CSS"
+        ],
+        "client": "Swetha Sai Phani Clinic",
+        "year": "2025",
+        "link": "https://swethasaiphaniclinics.com",
+        "features": [
+            "Online Appointment Booking",
+            "Patient Records Management",
+            "Doctor Schedule Management",
+            "Prescription Management",
+            "Payment Integration"
+        ],
+        "results": {
+            "Appointment Efficiency": "+80%",
+            "Patient Satisfaction": "+65%",
+            "Administrative Time": "-50%"
+        }
+    },
+    {
+        "id": 8,
+        "title": "Student Bus Tracking System",
+        "description": "Real-time GPS-based bus tracking system for schools, enabling parents and administrators to monitor student transportation safely.",
+        "image": "/images/student-bus-tracking.jpg",
+        "category": "mobile",
+        "technologies": [
+            "React Native",
+            "Node.js",
+            "MongoDB",
+            "Google Maps API",
+            "Socket.io"
+        ],
+        "client": "Student Bus Tracking",
+        "year": "2025",
+        "link": "https://bustracking.resonira.in/",
+        "features": [
+            "Real-time GPS Tracking",
+            "Parent Mobile App",
+            "Driver Management",
+            "Route Optimization",
+            "Push Notifications"
+        ],
+        "results": {
+            "Parent Satisfaction": "+90%",
+            "Route Efficiency": "+35%",
+            "Safety Incidents": "-75%"
+        }
+    },
+    {
+        "id": 9,
+        "title": "School ERP System",
+        "description": "Comprehensive school management ERP system covering admissions, attendance, academics, fees, and communication.",
+        "image": "/images/school-erp.png",
+        "category": "web",
+        "technologies": [
+            "React",
+            "Node.js",
+            "PostgreSQL",
+            "Redis",
+            "AWS"
+        ],
+        "client": "School ERP",
+        "year": "2025",
+        "link": "https://school.resonira.in/login/",
+        "features": [
+            "Student Admissions Management",
+            "Attendance Tracking",
+            "Academic Performance",
+            "Fee Management",
+            "Parent-Teacher Communication"
+        ],
+        "results": {
+            "Administrative Efficiency": "+70%",
+            "Fee Collection": "+45%",
+            "Parent Engagement": "+80%"
+        }
+    },
+    {
+        "id": 13,
+        "title": "NextGen Smart City IoT Platform",
+        "description": "Upcoming massively scalable IoT platform for smart cities, managing traffic, waste, and energy consumption in real-time.",
+        "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=400&fit=crop",
+        "category": "automation",
+        "technologies": [
+            "IoT",
+            "Kafka",
+            "Rust",
+            "Kubernetes",
+            "TimescaleDB"
+        ],
+        "client": "SmartCity Initiative",
+        "year": "2026 (Upcoming)",
+        "features": [
+            "Real-time Traffic Management",
+            "Waste Collection Optimization",
+            "Smart Grid Integration",
+            "Citizen Portal",
+            "Predictive Maintenance"
+        ],
+        "results": {
+            "Energy Savings": "Target 30%",
+            "Traffic Congestion": "Target -40%",
+            "Operational Cost": "Target -25%"
+        }
+    },
+    {
+        "id": 14,
+        "title": "AI-Driven Legal Assistant",
+        "description": "Upcoming legal tech solution using LLMs to assist lawyers in case research, document drafting, and precedent analysis.",
+        "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600&h=400&fit=crop",
+        "category": "ai",
+        "technologies": [
+            "Python",
+            "LLMs",
+            "Vector DB",
+            "React",
+            "FastAPI"
+        ],
+        "client": "Internal R&D",
+        "year": "2026 (Upcoming)",
+        "features": [
+            "Case Law Research",
+            "Document Drafting",
+            "Contract Review",
+            "Legal Chatbot",
+            "Citation Analysis"
+        ],
+        "results": {
+            "Research Time": "Target -80%",
+            "Accuracy": "Target 99%",
+            "Cost Efficiency": "High"
+        }
+    },
+    {
+        "id": 15,
+        "title": "Swetha SaiPhani Clinic HMS",
+        "description": "Comprehensive Healthcare Management System for Swetha SaiPhani Clinics featuring online appointments, patient records, doctor management, and advanced medical care administration in Karimnagar, Telangana.",
+        "image": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&h=400&fit=crop",
+        "category": "web",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "Supabase",
+            "Tailwind CSS",
+            "Vite"
+        ],
+        "client": "Swetha SaiPhani Clinics",
+        "year": "2025",
+        "link": "https://swethasaiphani.clinic/",
+        "features": [
+            "Hospital Management System",
+            "Online Appointment Booking",
+            "Patient Records Management",
+            "Doctor Schedule Management",
+            "Prescription & Billing"
+        ],
+        "results": {
+            "Appointment Efficiency": "+85%",
+            "Patient Satisfaction": "+70%",
+            "Administrative Time": "-55%"
+        }
+    },
+    {
+        "id": 16,
+        "title": "Palle News",
+        "description": "A hyper-local news and community engagement platform bringing 'Local to Popular' through event posters, verified local news, and job notifications for rural areas.",
+        "image": "/images/palle-news.jpg",
+        "category": "mobile",
+        "technologies": [
+            "React Native",
+            "Node.js",
+            "MongoDB",
+            "Tailwind CSS"
+        ],
+        "client": "Palle Team",
+        "year": "2025",
+        "features": [
+            "Local News Reporting",
+            "Event Poster Generation",
+            "Job Notifications Hub",
+            "Vernacular Language Support",
+            "Offline Capability"
+        ],
+        "results": {
+            "Local News Reach": "+50k Users",
+            "Daily Posters": "200+",
+            "Information Velocity": "Real-time"
+        }
+    },
+    {
+        "id": 17,
+        "title": "Job Kraves",
+        "description": "An intelligent recruitment and job portal that streamlines the hiring process, connecting top-tier talent with industry-leading organizations through advanced matching algorithms.",
+        "image": "/images/job-kraves.png",
+        "category": "web",
+        "technologies": [
+            "React",
+            "Node.js",
+            "PostgreSQL",
+            "AI Matching",
+            "Cloudinary"
+        ],
+        "client": "Job Kraves",
+        "year": "2025",
+        "features": [
+            "AI-powered Job Matching",
+            "Responsive Resume Builder",
+            "Employer Dashboard",
+            "Real-time Interview Scheduling",
+            "Advanced Search Filters"
+        ],
+        "results": {
+            "Hiring Speed": "40% faster",
+            "Candidate Quality": "+50%",
+            "User Growth": "+25k Applicants"
+        }
+    }
+]
