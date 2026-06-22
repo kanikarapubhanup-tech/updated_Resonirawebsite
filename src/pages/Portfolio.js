@@ -134,6 +134,19 @@ const Portfolio = () => {
                         className="w-full h-48 object-cover"
                       />
                       <div className="absolute top-4 right-4 flex space-x-2">
+                        {project.webLink && (
+                          <motion.a
+                            href={project.webLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 bg-white/90 backdrop-blur-sm rounded-lg hover:bg-white transition-colors duration-200"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            title="Web Version"
+                          >
+                            <Globe className="w-4 h-4 text-gray-700" />
+                          </motion.a>
+                        )}
                         {project.link && (
                           <motion.a
                             href={project.link}
@@ -142,6 +155,7 @@ const Portfolio = () => {
                             className="p-2 bg-white/90 backdrop-blur-sm rounded-lg hover:bg-white transition-colors duration-200"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
+                            title="App / Live Project"
                           >
                             <ExternalLink className="w-4 h-4 text-gray-700" />
                           </motion.a>
@@ -224,17 +238,30 @@ const Portfolio = () => {
                               </div>
 
                               {/* Visit Project Link */}
-                              {project.link && project.link !== '#' && (
-                                <a
-                                  href={project.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center text-sm text-primary-500 hover:text-primary-600 font-medium"
-                                >
-                                  <ExternalLink className="w-4 h-4 mr-1" />
-                                  Visit Live Project
-                                </a>
-                              )}
+                              <div className="flex space-x-4">
+                                {project.webLink && project.webLink !== '#' && (
+                                  <a
+                                    href={project.webLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center text-sm text-primary-500 hover:text-primary-600 font-medium"
+                                  >
+                                    <Globe className="w-4 h-4 mr-1" />
+                                    Visit Web Version
+                                  </a>
+                                )}
+                                {project.link && project.link !== '#' && (
+                                  <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center text-sm text-primary-500 hover:text-primary-600 font-medium"
+                                  >
+                                    <ExternalLink className="w-4 h-4 mr-1" />
+                                    Visit Live Project
+                                  </a>
+                                )}
+                              </div>
                             </div>
                           </motion.div>
                         )}
